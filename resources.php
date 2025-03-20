@@ -11,12 +11,7 @@
 
 <div class="content">
     <!-- Header -->
-    <div id="header"></div>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header').innerHTML = data);
-    </script>
+    <?php include 'header.php'; ?>
 
     <main>
         <section class="resource-section">
@@ -53,9 +48,7 @@
 
                 <div class="resource">
                     <h2>Caribbean Student Association (CSA)</h2>
-                    <p>Provides a second home to students of Caribbean descent, allowing them to freely express their culture and relate to other Caribbean students in a safe space. The club also educates the RIT community about Caribbean culture, customs, and attributes.
-
-                    </p>
+                    <p>Provides a second home to students of Caribbean descent, allowing them to freely express their culture and relate to other Caribbean students in a safe space. The club also educates the RIT community about Caribbean culture, customs, and attributes.</p>
                     <p>Follow them on Instagram @rit_csa!</p>
                     <a href="https://campusgroups.rit.edu/login_only?redirect=https%3a%2f%2fcampusgroups.rit.edu%2ffeeds%3ftype%3dclub%26type_id%3d16079%26tab%3dabout" target="_blank">LEARN MORE</a>
                 </div>

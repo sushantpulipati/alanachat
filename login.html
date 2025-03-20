@@ -27,17 +27,18 @@
 
 <div class="content">
     <!-- Header -->
-    <div id="header"></div>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header').innerHTML = data);
-    </script>
+<!--    <div id="header"></div>-->
+<!--    <script>-->
+<!--        fetch('header.html')-->
+<!--            .then(response => response.text())-->
+<!--            .then(data => document.getElementById('header').innerHTML = data);-->
+<!--    </script>-->
+    <?php include 'header.php'; ?>
 
     <main>
         <section id="login-section" class="login-section">
             <h1>Login to ALANA Chat</h1>
-            <form id="login-form">
+            <form id="login-form" action="login.php" method="POST">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
 
@@ -51,7 +52,7 @@
 
         <section id="signup-section" class="signup-section" style="display: none;">
             <h1>Sign Up for ALANA Chat</h1>
-            <form id="signup-form">
+            <form id="signup-form" action="signup.php" method="POST">
                 <label for="new-name">Full name:</label>
                 <input type="text" id="new-name" name="new-name" required>
 
@@ -63,6 +64,7 @@
 
                 <button type="submit">Sign Up</button>
             </form>
+
             <p>Already have an account? <a href="#" onclick="showForm('login')">Login here</a></p>
         </section>
     </main>
