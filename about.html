@@ -2,124 +2,161 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - ALANA Chat</title>
+    <title>ALANA Chat: About</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        /* Additional inline CSS to fix spacing */
-        .team, .advisors {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .team-member, .advisor {
-            margin: 10px 0;
-        }
-        .team-member h3, .advisor h3 {
-            margin-bottom: 5px;
-        }
 
-        /* Adjust layout to display in two columns */
-        .team {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-            gap: 20px;
-            margin-bottom: 40px;
-            justify-items: center; /* Center items in grid cells */
-        }
 
-        .team-member {
-            text-align: center; /* Center text for each team member */
-        }
-
-        .team-member h3 {
-            margin-bottom: 10px; /* Slightly increased spacing */
-        }
-
-        .team-member p {
-            margin: 0;
-        }
-    </style>
-
-</head>
-<body>
-<div class="background"></div> <!-- Background Layer -->
-
-<div class="content">
-    <!-- Header -->
     <div id="header"></div>
     <script>
         fetch('header.php')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
     </script>
+    
+</head>
 
-    <!-- Main Section -->
-    <main>
-        <section class="intro">
-            <h1>About ALANA Chat</h1>
-            <p>MISSION STATEMENT HERE AND WHAT IS ALANA</p>
-        </section>
+<body>
 
-        <section class="section-white">
-            <h2>Meet the Team!</h2>
-            <div class="team">
+<div class="about-top">
 
-                <div class="team-member">
-                    <h3>Enzo Espiritu</h3>
-                    <p>Developer</p>
-                </div>
-                <div class="team-member">
-                    <h3>Alison Lodge</h3>
-                    <p>Project Manager</p>
-                </div>
-                <div class="team-member">
-                    <h3>Maria Weir</h3>
-                    <p>Researcher</p>
-                </div>
-                <div class="team-member">
-                    <h3>Grace Ledford</h3>
-                    <p>Marketing</p>
-                </div>
-                <div class="team-member">
-                    <h3>Sushant Pulipati</h3>
-                    <p>Developer</p>
-                </div>
-            </div>
-        </section>
+    <h1>About</h1>
+    
+    <pre>
+     
+        
 
-        <section class="section-block">
-            <h2>Advisors</h2>
-            <div class="advisors">
-                <div class="advisor">
-                    <h3>Mike Minerva</h3>
-                    <p>New Media Design Professor (UI/UX)</p>
-                </div>
-                <div class="advisor">
-                    <h3>Philippa Thiuri</h3>
-                    <p>Division of Diversity and Inclusion, Content Creation/Community Outreach</p>
-                </div>
-                <div class="advisor">
-                    <h3>Nick Snyder</h3>
-                    <p>School of Information Professor</p>
-                </div>
-                <div class="advisor">
-                    <h3>Michael Frank</h3>
-                    <p>Capstone Professor</p>
-                </div>
-                <div class="advisor">
-                    <h3>Jessica Lieberman</h3>
-                    <p>Capstone Professor</p>
-                </div>
-                <div class="advisor">
-                    <h3>Zoe Zapata</h3>
-                    <p>ALANA Chat Founder</p>
-                </div>
-            </div>
-        </section>
-    </main>
 
+MISSION STATEMENT HERE AND WHAT IS ALANA
+
+    </pre>
+
+    <h2>
+        Meet the Team!
+    </h2>
+</div>
+
+<div class="about">
+    
+
+
+    <h2 id="headnames">Creators</h2>
+    <div id="container">
+        <div>
+            <img src="assets/img/zoe.png" alt="Zoe Zapata">
+            <h2>Zoe Zapata</h2>
+            <pre>ALANA Chat Founder</pre>
+        </div>
+        <div>
+            <img src="assets/img/carter.png" alt="Carter Sargent">
+            <h2>Carter Sargent</h2>
+            <pre>ALANA Chat Back-end Developer</pre>
+        </div>
+    </div>
+
+    <h2 id="headnames">Advisors</h2>
+    <div id="container">
+        <div>
+            <img src="assets/img/minerva.png" alt="Mike Minerva">
+            <h2>Mike Minerva</h2>
+            <pre>New Media Design Professor
+UI/UX</pre>
+        </div>
+
+        <div>
+            <img src="assets/img/thiuri.png" alt="Philippa Thiuri">
+            <h2>Philippa Thiuri</h2>
+            <pre>Division of Diversity and Inclusion
+Content Creation/Community Outreach</pre>
+        </div>
+
+        <div>
+            <img src="assets/img/snyder.png" alt="Nick Snyder">
+            <h2>Nick Snyder</h2>
+            <pre>School of Information Professor</pre>
+        </div>
+        
+    </div>
+
+    <div id="container">
+        <div>
+            <img src="assets/img/frank.png" alt="Michael Frank">
+            <h2>Michael Frank</h2>
+            <pre>Capstone Professor</pre>
+        </div>
+
+        <div>
+            <img src="assets/img/jess.png" alt="Jessica Lieberman">
+            <h2>Jessica Lieberman</h2>
+            <pre>Capstone Professor</pre>
+        </div>
+
+        <div>
+            <img src="assets/img/zoe.png" alt="Zoe Zapata">
+            <h2>Zoe Zapata</h2>
+            <pre>ALANA Chat Founder</pre>
+        </div>
+    </div>
+
+    <h2 id="headnames">Current Capstone</h2>
+    <div id="container">
+        <div>
+            <img src="assets/img/grace.png" alt="Grace Ledford">
+            <h2>Grace Ledford</h2>
+            <pre>Capstone 25'
+Marketing</pre>
+        </div>
+
+        <div>
+            <img src="assets/img/rin.png" alt="Trinity Wray">
+            <h2>Trinity Wray</h2>
+            <pre>Capstone 25'
+Project Manager</pre>
+        </div>
+
+        <div>
+            <img src="assets/img/filler.png" alt="filler">
+            <h2>Ali</h2>
+            <pre>Capstone 25'
+Researcher</pre>
+        </div>
+    </div>
+
+    <div id="container">
+        <div>
+            <img src="assets/img/filler.png" alt="filler">
+            <h2>Enzo</h2>
+            <pre>Capstone 25'
+Back-end/Front-end Developer</pre>
+        </div>
+        
+        <div>
+            <img src="assets/img/filler.png" alt="filler">
+            <h2>Sushant</h2>
+            <pre>Capstone 25'
+Back-end/Front-end Developer</pre>
+        </div>
+    </div>
+
+    <h2 id="headnames">Past Capstone</h2>
+    <div id="container">
+        <div>
+            <img src="assets/img/chiny.png" alt="Chiny Okonkwo">
+            <h2>Chiny Okonkwo</h2>
+            <pre>Capstone 24'
+UI/UX</pre>
+        </div>
+        <div>
+            <img src="assets/img/filler.png" alt="filler">
+            <h2>Larry</h2>
+            <pre>Capstone 24'
+Back-end Developer
+
+
+
+
+
+
+</pre>
     <!-- Footer -->
     <div id="footer"></div>
     <script>
