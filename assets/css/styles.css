@@ -255,7 +255,7 @@ nav ul li a.active, nav ul li a:hover, .footer-nav ul li a:hover {
 
 /*About Page*/
 /* Centering the sections */
-.team, .advisors {
+.team{
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
@@ -263,7 +263,12 @@ nav ul li a.active, nav ul li a:hover, .footer-nav ul li a:hover {
     min-height: 400px; /* You can adjust this value based on your design */
 }
 
-/* Content inside the centered sections */
+.advisor{
+
+    text-align: left; /* Aligns text to the left */
+}
+
+    /* Content inside the centered sections */
 .team .content, .advisors .content {
     width: 80%; /* You can adjust the width as needed */
     max-width: 1200px; /* Maximum width for large screens */
