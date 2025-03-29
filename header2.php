@@ -16,7 +16,7 @@
 <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="blog.php">Blog</a></li>
+            <li><a href="blog.php">Chat</a></li>
             <li><a href="resources.php">Resources</a></li>
             <?php if ($isLoggedIn): ?>
                 <li><a href="logout.php">Logout</a></li>
