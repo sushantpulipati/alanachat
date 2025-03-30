@@ -216,7 +216,7 @@ nav ul li a.active, nav ul li a:hover, .footer-nav ul li a:hover {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    border-readius: 10px;
+    border-radius: 10px;
     transition: background 0.3s;
 }
 
@@ -252,36 +252,57 @@ nav ul li a.active, nav ul li a:hover, .footer-nav ul li a:hover {
     color: #333;
 }
 
+/*About page styling*/
+.about-top {
+    position: relative;
+    top: 150px;
+}
 
-/*About Page*/
-/* Centering the sections */
-.team{
+.about-top h1, h2, pre {
+    text-align: center;
+}
+
+.about-top pre{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.about {
+    position: relative;
+    top: 100px;
+}
+
+.about h1, h2 {
+    padding: 50px;
+}
+
+.about h2 {
+    position: relative;
+    top: -50px;
+    left: -50px;
+}
+
+.about pre {
+    position: relative;
+    top: -100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+}
+
+.about image {
+    position: relative;
+    top: -50px;
+    left: 500px;
+}
+
+#container {
+    justify-content: center;
+    gap: 15px;
     display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    text-align: center; /* Centers text within each section */
-    min-height: 400px; /* You can adjust this value based on your design */
-}
+    flex-wrap: wrap;
+ }
 
-.advisor{
-
-    text-align: left; /* Aligns text to the left */
-}
-
-    /* Content inside the centered sections */
-.team .content, .advisors .content {
-    width: 80%; /* You can adjust the width as needed */
-    max-width: 1200px; /* Maximum width for large screens */
-    margin: 0 auto; /* Ensures content is centered */
-}
-
-/* You can add more styles to customize team and advisor sections */
-.team .content h2, .advisors .content h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-}
-
-.team .content p, .advisors .content p {
-    font-size: 1.2em;
-    color: #555;
-}
+ #headnames {
+    text-align: left;
+    padding-left: 100px;
+    text-decoration-line: underline;
+ }

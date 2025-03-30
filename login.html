@@ -20,50 +20,6 @@
             showForm('login'); // Default to login form
         });
     </script>
-    <script>
-        // Function to validate email format and prevent SQL injection
-        function validateEmail(username) {
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@rit\.edu$/;
-            return emailPattern.test(username);
-        }
-
-        // Function to validate inputs before submission
-        function validateForm(formId) {
-            const form = document.getElementById(formId);
-            const username = form.username ? form.username.value : form['new-username'].value;  // Check for login or signup form
-            const password = form.password ? form.password.value : form['new-password'].value;
-
-            // Validate email
-            if (!validateEmail(username)) {
-                alert("Invalid username. Please enter an email ending with @rit.edu.");
-                return false;
-            }
-
-            // Validate password (ensure no SQL keywords or special chars)
-            const sqlInjectionPattern = /['";]/;
-            if (sqlInjectionPattern.test(username) || sqlInjectionPattern.test(password)) {
-                alert("Invalid input. SQL injection attempt detected.");
-                return false;
-            }
-
-            return true;
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            // Default to login form
-            showForm('login');
-
-            // Attach validation function to both forms
-            document.getElementById('login-form').onsubmit = function() {
-                return validateForm('login-form');
-            };
-
-            document.getElementById('signup-form').onsubmit = function() {
-                return validateForm('signup-form');
-            };
-        });
-    </script>
-
 
 </head>
 <body>
