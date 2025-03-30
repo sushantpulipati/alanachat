@@ -216,7 +216,7 @@ nav ul li a.active, nav ul li a:hover, .footer-nav ul li a:hover {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    border-readius: 10px;
+    border-radius: 10px;
     transition: background 0.3s;
 }
 
