@@ -1,4 +1,7 @@
 <?php
+ini_set('upload_max_filesize', '8M');
+ini_set('post_max_size', '10M');
+
 session_start();
 
 $isLoggedIn = isset($_SESSION['user_id']); // Assume user_id is stored in session
@@ -21,18 +24,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = mysqli_real_escape_string($mysqli, $_POST['content']);
 
     // Handle image upload (optional)
-    $image = NULL;
+    $imageData = NULL;
     if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
         // Get the file content and encode it as a blob
-        $image = file_get_contents($_FILES['image']['tmp_name']);
+        $imageData = file_get_contents($_FILES['image']['tmp_name']);
     }
+
+// if ($imageData === null) {
+//     echo "Image upload failed or was empty.<br>";
+//     if (!isset($_FILES['image'])) echo "No file uploaded.<br>";
+//     else echo "Upload error code: " . $_FILES['image']['error'] . "<br>";
+// }
+
 
     // Insert the new post into the database
     $query = "INSERT INTO blogs (user_id, title, content, image) VALUES ('$userId', '$title', '$content', ?)";
     $stmt = mysqli_prepare($mysqli, $query);
 
     // Bind the parameters for the image (which might be NULL)
-    mysqli_stmt_bind_param($stmt, 's', $image); // 's' stands for string (for image as BLOB)
+    mysqli_stmt_bind_param($stmt, 'b', $imageData);
 
     // Execute the query
     if (mysqli_stmt_execute($stmt)) {
@@ -58,13 +68,13 @@ include 'header2.php';
             <h2>Create a New Post</h2>
             <form class="create-post-form" action="create_post.php" method="POST" enctype="multipart/form-data">
                 <label for="post-title">Post Title</label>
-                <input type="text" id="post-title" name="post-title" placeholder="Enter your post title" required>
+                <input type="text" id="post-title" name="title" placeholder="Enter your post title" required>
 
                 <label for="post-content">Post Content</label>
-                <textarea id="post-content" name="post-content" rows="6" placeholder="Write your post content here..." required></textarea>
+                <textarea id="post-content" name="content" rows="6" placeholder="Write your post content here..." required></textarea>
 
                 <label for="post-image">Post Image</label>
-                <input type="file" id="post-image" name="post-image" accept="image/*" />
+                <input type="file" id="image" name="image" accept="image/*" />
 
                 <div class="form-actions">
                     <button type="submit" class="submit-btn">Publish Post</button>
