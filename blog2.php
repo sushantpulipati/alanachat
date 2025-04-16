@@ -48,56 +48,6 @@ include 'header2.php';
                     echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Blog Image" class="blog-image">';
                 }
                 echo '<p>' . nl2br(htmlspecialchars($row['content'])) . '</p>';
-
-                ?>
-                <!-- Comments Section -->
-                <div class="comments-section">
-                    <h3>Comments:</h3>
-                    <?php
-                    $comment_sql = "SELECT comments.comment, comments.created_at, users.full_name
-                                    FROM comments
-                                    JOIN users ON comments.user_id = users.id
-                                    WHERE comments.blog_id = ?
-                                    ORDER BY comments.created_at ASC";
-
-                    if ($stmt = mysqli_prepare($mysqli, $comment_sql)) {
-                        mysqli_stmt_bind_param($stmt, "i", $row['id']);
-                        mysqli_stmt_execute($stmt);
-                        $comment_result = mysqli_stmt_get_result($stmt);
-
-                        if ($comment_result && mysqli_num_rows($comment_result) > 0) {
-                            while ($comment = mysqli_fetch_assoc($comment_result)) {
-                                echo '<div class="comment">';
-                                echo '<p><strong>' . htmlspecialchars($comment['full_name']) . ':</strong> ' . htmlspecialchars($comment['comment']) . '</p>';
-                                echo '<small>' . htmlspecialchars($comment['created_at']) . '</small>';
-                                echo '</div>';
-                            }
-                        } else {
-                            echo '<p>No comments yet.</p>';
-                        }
-
-                        mysqli_stmt_close($stmt);
-                    } else {
-                        echo '<p style="color:red;">Could not prepare comment query.</p>';
-                    }
-                    ?>
-                </div>
-
-
-                <!-- Comment Form -->
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <div class="comment-form">
-                        <form action="add_comment.php" method="POST">
-                            <textarea name="comment" required placeholder="Write your comment..."></textarea>
-                            <input type="hidden" name="blog_id" value="<?= $row['id'] ?>">
-                            <button type="submit">Post Comment</button>
-                        </form>
-                    </div>
-                <?php else: ?>
-                    <p><a href="login.html">Login</a> to post a comment.</p>
-                <?php endif; ?>
-
-                <?php
                 echo '</div>';
                 echo '</article>';
             }

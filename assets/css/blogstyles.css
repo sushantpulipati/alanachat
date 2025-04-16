@@ -266,6 +266,43 @@ footer nav ul li a:hover {
     border-bottom: 2px solid #e63946;
 }
 
+/*comments*/
+.comments-section {
+    margin-top: 20px;
+    border-top: 2px solid #e63946;
+    padding-top: 15px;
+}
+
+.comment {
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.comment-form button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.comment-form button:hover {
+    background-color: #c92d36;
+}
+
+
 /* Media Queries */
 @media (max-width: 768px) {
     .blog-posts {
